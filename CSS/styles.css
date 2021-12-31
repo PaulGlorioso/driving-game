@@ -2,6 +2,11 @@ body {
   background-color: #288d26;
 }
 
+.vehicle {
+  position: absolute;
+  left: 0;
+}
+
 img {
   width: 10rem;
 }
