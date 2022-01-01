@@ -1,5 +1,6 @@
 var car = document.querySelector('.car');
 var xCounter = 1;
+var yCounter = 0;
 var gps = {
   facing: car.className,
   engine: 'off',
@@ -30,7 +31,21 @@ document.addEventListener('keydown', function (event) {
 });
 
 function moveCar() {
-  vehicle.style.left = xCounter + 'px';
-  gps.x = xCounter;
-  xCounter++;
+  if (car.className === 'car right') {
+    vehicle.style.left = xCounter + 'px';
+    gps.x = xCounter;
+    xCounter++;
+  } else if (car.className === 'car down') {
+    vehicle.style.top = yCounter + 'px';
+    gps.y = yCounter;
+    yCounter++;
+  } else if (car.className === 'car left') {
+    vehicle.style.left = xCounter + 'px';
+    gps.x = xCounter;
+    xCounter--;
+  } else if (car.className === 'car up') {
+    vehicle.style.top = yCounter + 'px';
+    gps.y = yCounter;
+    yCounter--;
+  }
 }
